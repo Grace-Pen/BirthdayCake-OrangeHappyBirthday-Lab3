@@ -1,5 +1,6 @@
 package cs301.birthdaycake;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         SeekBar candleSeek = findViewById( R.id.seekCandles );
         candleSeek.setOnSeekBarChangeListener(controller);
+
+        theView.setOnTouchListener(controller);
 
 
     }

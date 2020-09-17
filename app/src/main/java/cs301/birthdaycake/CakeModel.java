@@ -10,6 +10,8 @@ public class CakeModel {
     boolean frosting = true;
     boolean candleOn = true;
 
+    float xPos;
+    float yPos;
 
     public void CakeModel(){
 
