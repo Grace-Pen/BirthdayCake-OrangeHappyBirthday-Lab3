@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         SeekBar candleSeek = findViewById( R.id.seekCandles );
         candleSeek.setOnSeekBarChangeListener(controller);
 
+        theView.setOnTouchListener(controller);
+
 
     }
     //Reference to the CakeView class
