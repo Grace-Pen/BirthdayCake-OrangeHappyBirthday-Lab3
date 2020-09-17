@@ -11,6 +11,8 @@ public class CakeModel {
     boolean candleOn = true;
     float[] balloonCoordinates = new float[]{-1f,-1f};
 
+    float xPos;
+    float yPos;
 
     public void CakeModel(){
 

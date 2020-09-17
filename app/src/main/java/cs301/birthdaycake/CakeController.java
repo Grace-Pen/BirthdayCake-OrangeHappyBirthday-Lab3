@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 
-public class CakeController implements View.OnClickListener,  CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
+public class CakeController implements View.OnClickListener,  CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener  {
    private CakeView cakeView; //Reference to the CakeView class
    private CakeModel cakeModel; //Reference to the CakeModel class
 
@@ -15,6 +15,17 @@ public class CakeController implements View.OnClickListener,  CompoundButton.OnC
        this.cakeView = cv;
        this.cakeModel = cv.getCakeModel();
    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event)
+    {
+        cakeModel.xPos = event.getX();
+        cakeModel.yPos = event.getY();
+        cakeModel.balloonCoordinates[0] = event.getX();
+        cakeModel.balloonCoordinates[1] = event.getY();
+        cakeView.invalidate();
+        return true;
+    }
 
 //blow out candles
 @Override
@@ -52,11 +63,5 @@ public class CakeController implements View.OnClickListener,  CompoundButton.OnC
         //Not used
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        cakeModel.balloonCoordinates[0] = event.getX();
-        cakeModel.balloonCoordinates[1] = event.getY();
-        cakeView.invalidate();
-        return true;
     }
 }
