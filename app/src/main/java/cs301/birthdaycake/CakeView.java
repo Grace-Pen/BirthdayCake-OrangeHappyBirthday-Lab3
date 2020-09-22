@@ -1,5 +1,6 @@
 package cs301.birthdaycake;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -122,6 +123,7 @@ public class CakeView extends SurfaceView  {
      *
      * This method will draw a birthday cake
      */
+    @SuppressLint("DefaultLocale")
     @Override
     public void onDraw(Canvas canvas)
     {
@@ -161,7 +163,7 @@ public class CakeView extends SurfaceView  {
             }
 
         }
-        canvas.drawText(String.format("%.0f,%.0f", cakeModel.xPos ,cakeModel.yPos),2100, 1050, textPaint);
+        canvas.drawText(String.format("%.0f,%.0f", cakeModel.xPos ,cakeModel.yPos),1550, 720, textPaint);
 
         if(cakeModel.balloonCoordinates[0] != -1f){
             canvas.drawRect(cakeModel.balloonCoordinates[0], cakeModel.balloonCoordinates[1], cakeModel.balloonCoordinates[0] + 5, cakeModel.balloonCoordinates[1] +200, balloonStringP);
